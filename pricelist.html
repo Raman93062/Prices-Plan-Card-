@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Plan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        .card{
+            text-align: center;
+        }
+        .headerpbottomline{
+            border-bottom: 1px solid white;
+        }
+
+        .card p{
+            text-align: start;
+            margin: 3px;
+           
+        }
+        
+        h3{
+            font-size: 15px;
+            font-weight: bold;
+        }
+        h4{
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+        .basicul{
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            background-color: white;
+            border-top-right-radius: 120px; 
+           
+            padding: 25px;
+            margin-bottom: 0;
+
+        }
+        
+        /* ul li{
+            
+            
+
+
+        } */
+        
+        /*icon size set */
+          ul li i{          
+            font-size:20px;
+           
+            margin: auto;
+            padding-top: 10px;
+            
+            font-family: 'Times New Roman', Times, serif;
+            text-align: left;
+        } 
+
+        .basiccardheader{
+            
+            height: 220px;
+               border-bottom-left-radius: 100px;
+            background-color: #489bb4;
+            color:#ffffff;
+            border: 0;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 5px;
+        }
+        .basiccardheader p{
+            font-size: 12px;
+        }
+        .basiccardbody{
+            
+            padding: 0;
+            
+            
+            
+        }
+        .btnn{
+            background-color: white;
+            padding: 10px  25px;
+            border-radius: 8px;
+            margin-top: 16px;
+            border: 0;
+            
+        }
+        .btnn:hover{
+            background-color: #489bb4;
+            border-bottom: 3px solid white;
+            padding: 10px  25px;
+            color: white;
+            border-radius: 0;  
+        }
+        .basicfoter{
+            background-color: #489bb4;
+        }
+        /* regular card css */
+        .regularheader{
+            height: 220px;
+           padding: 5px;
+            background-color: #565752;
+            color:white;
+            border: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .regularheader p{
+            font-size: 12px;
+        }
+
+        .regularcardbody{
+            padding: 0;
+            
+           
+        }
+        .regularbtnn{
+            background-color: white;
+            padding: 10px  25px;
+            border-radius: 8px;
+            margin-top: 16px;
+            border: 0;
+        }
+        .regularbtnn:hover{
+            background-color: #565752;
+            border-bottom: 3px solid white;
+            padding: 10px  25px;
+            color: white;
+            border-radius: 0;  
+        }
+        .regularfoter{
+            background-color: #565752;
+        }
+        
+
+         /* regular card css close */
+
+         /* premium card css */
+         .premiumcardheader{
+            height: 220px;
+            padding: 5px;
+          
+            background-color: #3f6457;
+            color:white;
+            border: 0;
+            font-family: 'Times New Roman', Times, serif;
+         }
+         .premiumcardheader p{
+            font-size: 12px;
+
+         }
+         .premiumcardbody{
+            padding: 0;
+            
+           
+         }
+         .premiumbtnn{
+            background-color: white;
+            padding: 10px  25px;
+            border-radius: 8px;
+            margin-top: 16px;
+            border: 0;
+         }
+         .premiumbtnn:hover{
+            background-color: #3f6457;
+            border-bottom: 3px solid white;
+            padding: 10px  25px;
+            color: white;
+            border-radius: 0;  
+         }
+         .premiumfoter{
+            background-color: #3f6457;
+         }
+         /* Enterprise card css */
+         .Enterprisecardheader{
+            height: 220px;
+           padding: 5px;
+           
+            background-color: #8a4848;
+            color:white;
+            border: 0;
+            font-family: 'Times New Roman', Times, serif;
+         }
+         .Enterprisecardheader p{
+            font-size: 12px;
+         }
+         .Enterprisecardbody{
+            padding: 0;
+            
+           
+         }
+         .Enterprisebtnn{
+            background-color: white;
+            padding: 10px  25px;
+            border-radius: 8px;
+            margin-top: 16px;
+            border: 0;
+         }
+         .Enterprisebtnn:hover{
+            background-color: #8a4848;
+            border-bottom: 3px solid white;
+            padding: 10px  25px;
+            color: white;
+            border-radius: 0;  
+         }
+         .Enterprisefoter{
+            background-color: #8a4848;
+         }
+         /* toggle button  css*/
+                 .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #b1b3b1;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        input:checked + .slider {
+          background-color: #18635c;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #18635c;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+
+
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+          text-align: center;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;
+        }
+        .checkbox{
+           text-align: center;
+           padding: 20px;
+        }
+        .disply{
+            display: none;
+        }
+        #monthcard{
+            display: flex;
+        }
+        .fa-circle-check{
+            color: #1fa44e;
+            padding: 0;
+        }
+        .fa-circle-xmark{
+            color: red;
+            padding: 0;
+        }
+        .icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icons2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icons3{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icons4{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .heading{
+            min-height: 30px;
+            max-height: 70px;
+          
+        }
+       
+
+
+
+    </style>
+</head>
+<body onload="rowheightcontrol()">
+    <div class="container-fluide">
+
+        <div class="container">
+            <!-- toggle button Year & Month Start -->
+            <div class="row">
+                <div class="col-12 checkbox">
+                    <span>Month</span>
+                    <label class="switch" >
+                       
+                        <input type="checkbox" id="toggle" onclick="btnmonthyear()" >
+                        <span class="slider round"></span>
+                      </label>
+                      <span>Year</span>
+                </div>
+            </div>
+            <!-- toggle button Year & Month close -->
+
+            <!-- month card start -->
+            <div class="row disply"  id="monthcard">
+                <!-- text card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header " style="background-color: transparent;max-height: 220px; ">
+                            <h2>&nbsp;</h2>
+                            <h2>&nbsp;</h2>
+                            <h2>&nbsp;</h2>
+                            <br>
+                            <br>
+                            <br>
+
+                            
+                        </div>
+                        <div class="card-body" style="padding: 5px;">
+                            <div>
+                                
+                                <ul style="list-style: none; padding:0;">
+                                    <li>
+                                        <h4 class="heading">General HR Process </h4>
+                                           
+                                        <p class="maintext"  >Direct Entries of Employees on Portal</p>
+                                               
+                                    </li>
+
+                                    <li>
+                                        <h4 class="heading">Multi Level Access of Software </h4>
+                                            
+                                        <p class="maintext">Customized Multi-level Access Right</p>
+                                            
+                                    </li>
+
+                                    <li>
+                                            <h4 class="heading">Core HR process with Onboarding & Exit </h4>
+                                        
+                                            <p class="maintext">Online process of Offer Letter with customized salary structure or conditions, Appointment Letter, Joining of Employee</p>
+                                            
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">KYE (Know Your Employee)</h4>
+                                        
+                                            <p class="maintext">Online Validation of Aadhar, PAN, Bank Account </p>
+                                        
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Employee Self Service (Mobile App/ Web)</h4>
+                                        
+                                            <p class="maintext">Employee Can apply for Leave, Advance, Loan, Attendance regularization, Expense, Reimbursement, Asset allocation request.</p>
+                                            <p class="maintext">Employee can view Salary slip, Attendance status, Salary Ledger, PF/ESI/LWF contribution etc.</p>
+                                            <p class="maintext">Punch Attendance Geo-location based (on Single of multiple assigned locations)</p>
+                                        
+                                    </li>
+                                    <li>
+                                        <h4 class="heading" ></h4>
+                                        <p class="maintext" >Employee Database & Records</p>
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Leaves Management</h4>
+                                        
+                                            <p class="maintext">Customized Leave setup for Each group/ employee, multiple leave category </p>
+                                        
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Attendance Management</h4>
+                                       
+                                            <p class="maintext">Punching mode: Mobile App, Machine, Web portal, Manual Multiple Attendance setup</p>
+                                            <p class="maintext">Tracking of employee</p>
+                                            <p class="maintext">Live Tracking of Employees</p>
+                                        
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Payroll Services</h4>
+                                        
+                                            <p class="maintext">Customized Salary Structure, Advance, Salary, Deductions, Hold salary,Download processed report customized Bank format</p>
+                                            <p class="maintext">Loan, Overtime Management</p>
+                                            <p class="maintext">EPF/ESI/LWF : Process and directly uploadable ECR/ESI /LWF sheet, Manage employee wise record</p>
+                                            <p class="maintext">Annual Increment, Promotion, etc.</p>
+                                            <p class="maintext">TDS/Form16</p>
+                                            <p class="maintext">Customized Bonus/ Incentive setup as per client</p>
+                                            <p class="maintext">Expense (Travel/ DA/ misc.) claim and reimbursement </p>
+                                        
+                                    </li>
+                                    <li>
+                                        <h4 class="heading">Customized Weekly off / Calendar</h4>
+                                        
+                                            <p class="maintext" >Customized Zone Wise Calendar and multiple Weekly off setup</p>
+                                        
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Asset Management</h4>
+                                        
+                                            <p class="maintext">Manage Asset like laptop/ Printer/ tools/ Machinery etc. issued to employee</p>
+                                       
+                                    </li>
+                                    <li>
+                                        <h4 class="heading"></h4>
+                                        <p  class="maintext">Multi Company/ Unit Support</p>
+                                    </li>
+                                    <li>
+                                             <h4 class="heading">Billing to clients</h4>
+                                        
+                                            <p class="maintext">Customized Billing formats available</p>
+                                       
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Reports & Analytics</h4>
+                                      
+                                            <p class="maintext">Basic Reports</p>
+                                            <p class="maintext">Customized reporting</p>
+                                            <p class="maintext">Visual Analytics</p>
+                                           
+                                       
+                                    </li>
+                                    <li>
+                                            <h4 class="heading">Support</h4>
+                                        
+                                            <p class="maintext">Email Support</p>
+                                            <p class="maintext">Phone Support</p>
+                                            <p class="maintext">Dedicated Support Manager</p>
+                                            <p class="maintext">Training of Employee</p>
+                                        
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- text card -->
+
+                <!--card 1st-->
+                <div class="col-md-2  ">
+                    <div class="card">
+                        <div class="card-header basiccardheader">
+                            <h3>Basic</h3>
+                            <p>Cost Per Employee :<b> ₹29/ month</b></p>
+                            <p>Minimum Charge: <b>₹700/ Month</b> </p>
+                            <p>Installation /setup Charge: <b>₹2000</b> </p>
+                            <p>Freebee Period: <b>2 month</b></p>
+                            <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                            <button class="btnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button> 
+                        </div>
+                        <div class="card-body basiccardbody">
+                           
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    
+                                   
+                                   
+                                    <ul style="list-style: none; padding:0;">
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                      
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><strong class="icons"> 1 Setup</strong></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><strong class="icons"> 1 Setup</strong></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                     <li><strong class="icons"> 1 Setup</strong></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                      <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                     <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                     <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                        <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    <li><i class="fa-regular fa-circle-check icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons"></i></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <div class="card-footer basicfoter">
+                            <button class="btnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--card 1st close-->
+
+                <!--card 2nd-->
+                <div class="col-md-2 ">
+                   <div class="card">
+                    <div class="card-header regularheader">
+                        <h3>Regular</h3>
+                        <p>Cost Per Employee :<b> ₹49/ month</b></p>
+                        <p>Minimum Charge: <b>₹2000/ Month</b> </p>
+                        <p>Installation /setup Charge: <b>₹5000</b> </p>
+                        <p>Freebee Period: <b>2 month</b></p>
+                        <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                        <button class="regularbtnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button> 
+    
+                       </div>
+                        <div class="card-body regularcardbody">
+                       
+                            
+                        <ul style="list-style: none; padding:0;">
+                            <li>
+                                <h4 class="heading"></h4>
+                                
+                               
+                               
+                                <ul style="list-style: none; padding:0;">
+                                    
+                                    <li><i class="fa-regular fa-circle-check icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                     <li><i class="fa-regular fa-circle-xmark icons2"></i></li>
+                                    </ul>
+                                </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark  icons2"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-check  icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark icons2"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark icons2"></i></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div> 
+                    <div class="card-footer regularfoter">
+                        <button class="regularbtnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                   </div>
+                </div>
+                <!--card 2nd close-->
+
+                <!--card 3rd-->
+                <div class="col-md-2  ">
+                    <div class="card">
+                        <div class="card-header premiumcardheader">
+                            <h3>Premium</h3>
+                            <p>Cost Per Employee :<b> ₹79/ month</b></p>
+                            <p>Minimum Charge: <b>₹4000/ Month</b> </p>
+                            <p>Installation /setup Charge: <b>₹5000</b> </p>
+                            <p>Freebee Period: <b>2 month</b></p>
+                            <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                             <button class="premiumbtnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button> 
+                        </div>
+                         <div class="card-body premiumcardbody">
+                           
+                              
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+    
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark icons3"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                      
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons3"></i></li>
+                                    </ul>
+                                </li>
+    
+                            </ul>
+                        </div> 
+                        <div class="card-footer premiumfoter">
+                            <button class="premiumbtnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--card 3rd close-->
+
+                <!--card 4th-->
+                <div class="col-md-2 "> 
+                    <div class="card">
+                        <div class="card-header Enterprisecardheader">
+                            <h3>Enterprise</h3>
+                            <p>Cost Per Employee :<b> ₹149/ month</b></p>
+                            <p>Minimum Charge: <b>₹7500/ Month</b> </p>
+                            <p>Installation /setup Charge: <b>₹5000</b> </p>
+                            <p>Freebee Period: <b>2 month</b></p>
+                            <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                            <button class="Enterprisebtnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button> 
+                        </div>
+                         <div class="card-body Enterprisecardbody">
+                            
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+    
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                       
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                     
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                        <li><i class="fa-regular fa-circle-check icons4"></i></li>
+                                    </ul>
+                                </li>
+    
+                            </ul>
+                        </div> 
+                        <div class="card-footer Enterprisefoter">
+                            <button class="Enterprisebtnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                 <!--card 4th close-->
+                
+            </div>
+            <!-- Month card close -->
+
+
+
+
+
+            <!-- Year cards -->
+            <div class="row disply"  id="yearcard">
+            
+               <!-- text card -->
+               <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header " style="background-color: transparent;max-height: 220px; ">
+                        <h2>&nbsp;</h2>
+                        <h2>&nbsp;</h2>
+                        <h2>&nbsp;</h2>
+                        <br>
+                        <br>
+                        <br>
+
+                        
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4>General HR Process </h4>
+                                        <ul>
+                                            <li>Direct Entries of Employees on Portal</li>
+                                        </ul>    
+                                </li>
+
+                                <li>
+                                    <h4>Multi Level Access of Software </h4>
+                                        <ul>
+                                            <li>Customized Multi-level Access Right</li>
+                                        </ul>
+                                </li>
+
+                                <li>
+                                    <h4>Core HR process with Onboarding & Exit </h4>
+                                        <ul>
+                                            <li>Online process of Offer Letter with customized salary structure or conditions, Appointment Letter, Joining of Employee</li>
+                                        </ul>
+                                </li>
+                                <li>
+                                    <h4>KYE (Know Your Employee)</h4>
+                                    <ul>
+                                        <li>Online Validation of Aadhar, PAN, Bank Account </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Employee Self Service (Mobile App/ Web)</h4>
+                                    <ul>
+                                        <li>Employee Can apply for Leave, Advance, Loan, Attendance regularization, Expense, Reimbursement, Asset allocation request.</li>
+                                        <li>Employee can view Salary slip, Attendance status, Salary Ledger, PF/ESI/LWF contribution etc.</li>
+                                        <li>Punch Attendance Geo-location based (on Single of multiple assigned locations)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Employee Database & Records</h4>
+                                </li>
+                                <li>
+                                    <h4>Leaves Management</h4>
+                                    <ul>
+                                        <li>Customized Leave setup for Each group/ employee, multiple leave category</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Attendance Management</h4>
+                                    <ul>
+                                        <li>Punching mode: Mobile App, Machine, Web portal, Manual Multiple Attendance setup</li>
+                                        <li>Tracking of employee</li>
+                                        <li>Live Tracking of Employees</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Payroll Services</h4>
+                                    <ul>
+                                        <li>Customized Salary Structure, Advance, Salary, Deductions, Hold salary,Download processed report customized Bank format</li>
+                                        <li>Loan, Overtime Management</li>
+                                        <li>EPF/ESI/LWF : Process and directly uploadable ECR/ESI /LWF sheet, Manage employee wise record</li>
+                                        <li>Annual Increment, Promotion, etc.</li>
+                                        <li>TDS/Form16</li>
+                                        <li>Customized Bonus/ Incentive setup as per client</li>
+                                        <li>Expense (Travel/ DA/ misc.) claim and reimbursement </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Customized Weekly off / Calendar</h4>
+                                    <ul>
+                                        <li>Customized Zone Wise Calendar and multiple Weekly off setup</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Asset Management</h4>
+                                    <ul>
+                                        <li>Manage Asset like laptop/ Printer/ tools/ Machinery etc. issued to employee</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Multi Company/ Unit Support</h4>
+                                </li>
+                                <li>
+                                    <h4>Billing to clients</h4>
+                                    <ul>
+                                        <li>Customized Billing formats available</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Reports & Analytics</h4>
+                                    <ul>
+                                        <li>Basic Reports</li>
+                                        <li>Customized reporting</li>
+                                        <li>Visual Analytics</li>
+                                       
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>Support</h4>
+                                    <ul>
+                                        <li>Email Support</li>
+                                        <li>Phone Support</li>
+                                        <li>Dedicated Support Manager</li>
+                                        <li>Training of Employee</li>
+                                    </ul>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- text card -->
+
+                <!--card 1st-->
+                <div class="col-md-2  ">
+                    <div class="card">
+                        <div class="card-header regularheader">
+                            <h3>Basic</h3>
+                            <p>Cost Per Employee :<b> ₹319/ Year</b></p>
+                            <p>Minimum Charge: <b>₹7700/ Year</b> </p>
+                            <p>Installation /setup Charge: <b>₹2000</b> </p>
+                            <p>Freebee Period: <b>2 month</b></p>
+                            <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                            <button class="regularbtnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div class="card-body basiccardbody">
+                            <!-- <ul class="basicul">
+                                <li ><i class="fa-solid fa-check "></i>
+                                    Direct Entries of Employees on Portal </li>
+                               
+                                
+                               
+                                <li><i class="fa-solid fa-check"></i> Employee can view Salary slip, Attendance status, Salary Ledger, PF/ESI/LWF contribution etc.</li>
+                                <li> <i class="fa-solid fa-check "></i> Employee Can apply for Leave, Advance, Loan, Attendance regularization, Expense, Reimbursement, Asset allocation request.</li>
+                                <li> <i class="fa-solid fa-check "></i>Punch Attendance Geo-location based (on Single of multiple assigned locations)</li>
+
+                                <li><i class="fa-solid fa-check"></i>Employee Database & Records</li>
+                                <li><strong>1 Setup |</strong> Customized Leave setup for Each group/ employee, multiple leave category</li>
+                                <li><strong>1 Setup |</strong> Punching mode: Mobile App, Machine, Web portal, Manual
+                                    Multiple Attendance setup
+                                    </li>
+                                <li><i class="fa-solid fa-check"></i>Customized Salary Structure, Advance, Salary, Deductions, Hold salary, 
+                                    Download processed report customized Bank format</li>
+                                <li><strong>1 Setup |</strong>Customized Zone Wise Calendar and multiple Weekly off setup</li>
+                                <li><i class="fa-solid fa-check"></i>Basic Reports</li>
+                                <li><i class="fa-solid fa-check"></i>Email Support</li>
+
+                            </ul> -->
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                        <li>&nbsp;</li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><strong> 1 Setup</strong></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><strong> 1 Setup</strong></li>
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        
+                                        <li><strong> 1 Setup</strong></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li>&nbsp;</li>
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <div class="card-footer regularfoter">
+                            <button class="regularbtnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--card 1st close-->
+
+                <!--card 2nd-->
+                <div class="col-md-2 ">
+                   <div class="card">
+                    <div class="card-header basiccardheader">
+                        <h3>Regular</h3>
+                        <p>Cost Per Employee :<b> ₹539/ Year</b></p>
+                        <p>Minimum Charge: <b>₹22000/ Year</b> </p>
+                        <p>Installation /setup Charge: <b>₹5000</b> </p>
+                        <p>Freebee Period: <b>2 month</b></p>
+                        <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                        <button class="btnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button>
+    
+                       </div>
+                       <div class="card-body regularcardbody">
+                       
+                            
+                        <ul style="list-style: none; padding:0;">
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark"></i></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li>&nbsp;</li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li>&nbsp;</li>
+                                    <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    <li>&nbsp;</li>
+                                    
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li></li>
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li></li>
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li>&nbsp;</li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    
+                                    
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li>&nbsp;</li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li>&nbsp;</li>
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li>&nbsp;</li>
+                                    <li></li>
+                                    
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li>&nbsp;</li>
+                                    <li></li>
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li>&nbsp;</li>
+                                    <li>&nbsp;</li>
+                                    
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li></li>
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="heading"></h4>
+                                <ul style="list-style: none; padding:0;">
+                                
+                                    <li></li>
+                                    <li></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li><i class="fa-regular fa-circle-check"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="card-footer basicfoter">
+                        <button class="btnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                   </div>
+                </div>
+                <!--card 2nd close-->
+
+                <!--card 3rd-->
+                <div class="col-md-2  ">
+                    <div class="card">
+                        <div class="card-header Enterprisecardheader">
+                            <h3>Premium</h3>
+                            <p>Cost Per Employee :<b> ₹869/ Year</b></p>
+                            <p>Minimum Charge: <b>₹44000/ Year</b> </p>
+                            <p>Installation /setup Charge: <b>₹5000</b> </p>
+                            <p>Freebee Period: <b>2 month</b></p>
+                            <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                            <button class="Enterprisebtnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div class="card-body premiumcardbody">
+                           
+                              
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+    
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                        <li>&nbsp;</li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li>&nbsp;</li>
+                                        
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-xmark"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+    
+                            </ul>
+                        </div>
+                        <div class="card-footer Enterprisefoter">
+                            <button class="Enterprisebtnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--card 3rd close-->
+
+                <!--card 4th-->
+                <div class="col-md-2 ">
+                    <div class="card">
+                        <div class="card-header premiumcardheader">
+                            <h3>Enterprise</h3>
+                            <p>Cost Per Employee :<b> ₹1639/ Year</b></p>
+                            <p>Minimum Charge: <b>₹82500/ Year</b> </p>
+                            <p>Installation /setup Charge: <b>₹5000</b> </p>
+                            <p>Freebee Period: <b>2 month</b></p>
+                            <p class="headerpbottomline">Number of Employees: <b>Unlimited</b></p>
+                            <button class="premiumbtnn " type="button" id="" >Calculate Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div class="card-body Enterprisecardbody">
+                            
+                            <ul style="list-style: none; padding:0;">
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+    
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></i></li>
+                                        <li>&nbsp;</li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li></li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li>&nbsp;</li>
+                                        <li>&nbsp;</li>
+                                        
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading"></h4>
+                                    <ul style="list-style: none; padding:0;">
+                                    
+                                        <li></li>
+                                        <li></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                        <li><i class="fa-regular fa-circle-check"></i></li>
+                                    </ul>
+                                </li>
+    
+                            </ul>
+                        </div>
+                        <div class="card-footer premiumfoter">
+                            <button class="premiumbtnn " type="button" id="" >Choose Plan <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                 <!--card 4th close-->
+                
+            </div>
+            <!-- Year card close -->
+         
+        </div>
+    </div>
+
+
+
+   
+    <script>  
+        function rowheightcontrol(){
+            
+            let subheading = document.getElementsByClassName("maintext");
+
+            let Icon = document.getElementsByClassName("icons");
+            let Icon2 = document.getElementsByClassName("icons2");
+            let Icon3 = document.getElementsByClassName("icons3");
+            let Icon4 = document.getElementsByClassName("icons4");
+
+
+
+
+            for (let i = 0; i < subheading.length; i++) {
+                subheading[i].style.height = "auto";
+                
+                subheading[i].style.margin="0px";
+                subheading[i].style.borderTop="1px solid #eaeaea   ";
+                
+                Icon[i].style.height = subheading[i].offsetHeight + "px";
+                Icon[i].style.padding="0px";
+                Icon[i].style.borderTop="1px solid #eaeaea   ";     
+                
+                
+                Icon2[i].style.height = subheading[i].offsetHeight + "px";
+               
+               Icon2[i].style.padding="0px";
+               Icon2[i].style.borderTop="1px solid #eaeaea";
+
+               Icon3[i].style.height = subheading[i].offsetHeight + "px";
+               
+               Icon3[i].style.padding="0px";
+               Icon3[i].style.borderTop="1px solid #eaeaea";
+
+               Icon4[i].style.height = subheading[i].offsetHeight + "px";
+               
+               Icon4[i].style.padding="0px";
+               Icon4[i].style.borderTop="1px solid #eaeaea";
+            }
+            
+
+        }
+
+        
+        
+    </script>
+    
+</body>
+</html>
